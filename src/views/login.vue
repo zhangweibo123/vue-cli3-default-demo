@@ -1,6 +1,7 @@
 <template>
-  <div class="home">
+  <div class="login">
     <h1>vue项目空白模板</h1>
+    <el-button>默认按钮</el-button>
   </div>
 </template>
 
@@ -11,3 +12,10 @@ export default {
   methods: {}
 };
 </script>
+<style lang="less" scoped>
+.login {
+  width: 100vw;
+  height: 100vh;
+  background: yellow;
+}
+</style>

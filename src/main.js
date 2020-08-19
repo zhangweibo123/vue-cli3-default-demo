@@ -4,6 +4,10 @@ import router from './router';
 import store from './store';
 //重置css
 import '@/assets/css/reset.css';
+// 引入element
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+Vue.use(ElementUI);
 
 Vue.config.productionTip = false;
 

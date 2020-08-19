@@ -16,7 +16,6 @@ module.exports = {
     }
   },
   css: {
-    extract: true,
     sourceMap: false,
     requireModuleExtension: true
   },
