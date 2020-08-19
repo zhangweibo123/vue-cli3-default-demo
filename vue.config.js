@@ -1,7 +1,6 @@
-const path = require('path')
-const uglifyJsPlugin = require('uglifyjs-webpack-plugin')
-const isProduction = process.env.NODE_ENV == 'production'
-const { VUE_APP_API_BASE } = process.env
+const path = require('path');
+const isProduction = process.env.NODE_ENV == 'production';
+const { VUE_APP_API_BASE } = process.env;
 
 module.exports = {
   publicPath: './',
@@ -13,8 +12,8 @@ module.exports = {
         changeOrigin: true,
         secure: false,
         pathRewrite: { '^/api': '' }
-      },
-    },
+      }
+    }
   },
   css: {
     extract: true,
@@ -30,13 +29,13 @@ module.exports = {
   chainWebpack: config => {
     if (isProduction) {
       // 删除预加载
-      config.plugins.delete('preload')
+      config.plugins.delete('preload');
       // 压缩代码: 压缩空格等
-      config.optimization.minimize(true)
+      config.optimization.minimize(true);
       // 分割代码
       config.optimization.splitChunks({
         chunks: 'all'
-      })
+      });
     }
   },
   configureWebpack: config => {
@@ -54,10 +53,10 @@ module.exports = {
             parallel: true
           }
         })
-      )
+      );
     }
   },
   productionSourceMap: false,
   // 启用并行化
   parallel: require('os').cpus().length > 1
-}
+};
